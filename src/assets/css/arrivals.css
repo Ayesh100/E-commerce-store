@@ -1,0 +1,38 @@
+.arrivals{
+    margin-top: 100px;
+}
+.arrivals-slide{
+    background-color: #dfdcdc;
+    padding: 30px 40px;
+}
+.arrivals-slide img {
+    height: 550px; 
+    object-fit: cover; 
+    border-radius: 7px;
+    border: solid 4px rgb(0, 60, 255)
+}
+
+
+.slide-content {
+    position: relative;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); 
+    padding: 20px;
+    width: 100%; 
+}
+
+.overlay-content h3, .overlay-content p {
+    margin: 10px 0;
+}
+
+.overlay-content button {
+    margin-top: 10px;
+}

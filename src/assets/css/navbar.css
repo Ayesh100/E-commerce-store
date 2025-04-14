@@ -1,0 +1,23 @@
+.notifications-drpdwn::-webkit-scrollbar {
+    width: 8px;
+}
+
+.notifications-drpdwn::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+.notifications-drpdwn::-webkit-scrollbar-thumb {
+    background: crimson;
+    border-radius: 10px;
+}
+
+.notifications-drpdwn::-webkit-scrollbar-thumb:hover {
+    background: rgb(247, 0, 49);
+}
+
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

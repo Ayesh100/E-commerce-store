@@ -1,0 +1,22 @@
+.categories{
+    margin-top: 100px;
+}
+.categories_slide img {
+    width: 90%;
+    height: 350px; 
+    object-fit: cover; 
+    border-radius: 7px;
+}
+.categories_heading{
+    position: absolute;
+    width: 90%;
+    top: 50%;
+    padding: 10px 0px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+}
+
+
+

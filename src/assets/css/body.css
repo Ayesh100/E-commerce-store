@@ -1,0 +1,13 @@
+.underline{
+    position: relative;
+}
+.underline::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: gold;
+    bottom: -7px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
