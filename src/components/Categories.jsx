@@ -9,7 +9,7 @@ function Categories() {
 
     useEffect(() => {
         // Fetch categories from Laravel backend
-        axios.get("http://onlinestore.test/api/categories") 
+        axios.get("https://mylaravelecommerce-x59pn02e.b4a.run/api/categories") 
             .then(response => {
                 setCategories(response.data); 
             })
