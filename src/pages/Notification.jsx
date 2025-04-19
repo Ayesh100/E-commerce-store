@@ -29,7 +29,7 @@ const NotificationsPage = () => {
     const fetchOrderDetails = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://onlinestore.test/api/notifications/${id}`, {
+        const response = await axios.get(`https://mylaravelecommerce-x59pn02e.b4a.run/api/notifications/${id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         console.log("API Response:", response.data); // Debugging
@@ -73,7 +73,7 @@ const NotificationsPage = () => {
           {orderDetails?.items?.map((item) => (
             <li key={item.id} className="list-group-item d-flex align-items-center">
               <img
-                src={`http://onlinestore.test/uploads/${item?.product_img}`}
+                src={`https://mylaravelecommerce-x59pn02e.b4a.run/uploads/${item?.product_img}`}
                 alt={item?.product_name || "Unknown Product"}
                 style={{ width: "50px", height: "50px", objectFit: "cover", borderRadius: "8px", marginRight: "10px" }}
               />
