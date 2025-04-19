@@ -33,7 +33,7 @@ function Category() {
 
     useEffect(() => {
         // Fetch category data and products
-        axios.get(`http://onlinestore.test/api/category/${categoryId}`)
+        axios.get(`https://mylaravelecommerce-x59pn02e.b4a.run/api/category/${categoryId}`)
             .then(response => {
                 setCategoryName(response.data.category_name);
                 setProducts(response.data.products);
@@ -46,7 +46,7 @@ function Category() {
             });
 
         // Fetch brands related to the category
-        axios.get(`http://onlinestore.test/api/category/${categoryId}/brands`)
+        axios.get(`https://mylaravelecommerce-x59pn02e.b4a.run/api/category/${categoryId}/brands`)
             .then(response => {
                 setBrands(response.data);
             })
@@ -95,7 +95,7 @@ function Category() {
             }
     
             const quantityToSend = quantities[productId] || 1;
-            await axios.post('http://onlinestore.test/api/cart/add', 
+            await axios.post('https://mylaravelecommerce-x59pn02e.b4a.run/api/cart/add', 
                 { product_id: productId, quantity: quantityToSend }, 
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -110,7 +110,7 @@ function Category() {
     // Handle login form submission
     const handleLoginSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://onlinestore.test/api/login', loginData)
+        axios.post('https://mylaravelecommerce-x59pn02e.b4a.run/api/login', loginData)
             .then(response => {
                 localStorage.setItem('token', response.data.token);
                 login(); // update global auth state
@@ -148,7 +148,7 @@ function Category() {
         }
 
         try {
-            const response = await axios.post('http://onlinestore.test/api/register', {
+            const response = await axios.post('https://mylaravelecommerce-x59pn02e.b4a.run/api/register', {
                 name: registerData.name,
                 email: registerData.email,
                 password: registerData.password,
@@ -171,7 +171,7 @@ function Category() {
 
     // Handle resend verification email (for login modal)
     const handleResendEmail = () => {
-        axios.post("http://onlinestore.test/api/resend-verification", { email: loginData.email })
+        axios.post("https://mylaravelecommerce-x59pn02e.b4a.run/api/resend-verification", { email: loginData.email })
             .then((response) => {
                 setResendMessage("Verification email has been resent. Please check your inbox.");
                 setShowResend(false);
