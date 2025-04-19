@@ -21,7 +21,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         axios
-            .post("http://onlinestore.test/api/login", formData)
+            .post("https://mylaravelecommerce-x59pn02e.b4a.run/api/login", formData)
             .then((response) => {
                 localStorage.setItem("token", response.data.token); // Save token
                 login(); // Update authentication state
@@ -47,7 +47,7 @@ const Login = () => {
 
     const handleResendEmail = () => {
         axios
-            .post("http://onlinestore.test/api/resend-verification", { email: formData.email })
+            .post("https://mylaravelecommerce-x59pn02e.b4a.run/api/resend-verification", { email: formData.email })
             .then((response) => {
                 setResendMessage("Verification email has been resent. Please check your inbox.");
                 setShowResend(false); // Hide form after resending
