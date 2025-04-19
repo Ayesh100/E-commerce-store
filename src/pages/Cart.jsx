@@ -29,7 +29,7 @@ function Cart() {
     const fetchCart = async () => {
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get('http://onlinestore.test/api/cart', {
+            const response = await axios.get('https://mylaravelecommerce-x59pn02e.b4a.run/api/cart', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setCartItems(response.data);
@@ -43,7 +43,7 @@ function Cart() {
     const removeFromCart = async (id) => {
         try {
             const token = localStorage.getItem("token");
-            await axios.delete(`http://onlinestore.test/api/cart/${id}`, {
+            await axios.delete(`https://mylaravelecommerce-x59pn02e.b4a.run/api/cart/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
@@ -59,7 +59,7 @@ function Cart() {
 
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.put(`http://onlinestore.test/api/cart/${id}`, 
+            const response = await axios.put(`https://mylaravelecommerce-x59pn02e.b4a.run/api/cart/${id}`, 
                 { quantity: newQuantity }, 
                 { headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" } }
             );
