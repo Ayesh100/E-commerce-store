@@ -40,7 +40,7 @@ function Checkout() {
 
         try {
             const token = localStorage.getItem("token");
-            await axios.post("http://onlinestore.test/api/checkout", formData, {
+            await axios.post("https://mylaravelecommerce-x59pn02e.b4a.run/api/checkout", formData, {
                 headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
             });
 
