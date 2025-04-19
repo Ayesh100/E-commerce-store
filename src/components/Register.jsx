@@ -18,7 +18,7 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://onlinestore.test/api/register', formData, {headers: {'Content-Type': 'application/json',},})
+        axios.post('https://mylaravelecommerce-x59pn02e.b4a.run/api/register', formData, {headers: {'Content-Type': 'application/json',},})
             .then(response => {
                 alert('Registration successful. Please check your email to verify your account.');
                 setErrors(null);
