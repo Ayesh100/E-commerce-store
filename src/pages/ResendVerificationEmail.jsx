@@ -1,7 +1,7 @@
 const resendVerificationEmail = async () => {
     try {
         const token = localStorage.getItem("authToken");
-        const response = await fetch("http://onlinestore.test/api/email/resend", {
+        const response = await fetch("https://mylaravelecommerce-x59pn02e.b4a.run/api/email/resend", {
             method: "POST",
             headers: {
                 "Authorization": `Bearer ${token}`,
