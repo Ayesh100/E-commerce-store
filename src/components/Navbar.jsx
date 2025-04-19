@@ -21,7 +21,7 @@ function Navbar() {
   // Fetch categories on mount
   useEffect(() => {
     axios
-      .get("http://onlinestore.test/api/categories")
+      .get("https://mylaravelecommerce-x59pn02e.b4a.run/api/categories")
       .then((response) => {
         setCategories(response.data)
         setLoading(false);
@@ -96,7 +96,7 @@ function Navbar() {
     if (!token) return;
 
     axios
-      .get("http://onlinestore.test/api/cart/count", {
+      .get("https://mylaravelecommerce-x59pn02e.b4a.run/api/cart/count", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -113,7 +113,7 @@ function Navbar() {
     if (!token) return;
 
     axios
-      .get("http://onlinestore.test/api/notifications", {
+      .get("https://mylaravelecommerce-x59pn02e.b4a.run/api/notifications", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
@@ -133,7 +133,7 @@ function Navbar() {
 
     try {
         await axios.post(
-            `http://onlinestore.test/api/notifications/${id}/read`,
+            `https://mylaravelecommerce-x59pn02e.b4a.run/api/notifications/${id}/read`,
             {},
             {
                 headers: { Authorization: `Bearer ${token}` },
@@ -159,7 +159,7 @@ const deleteNotification = async (id) => {
     }
 
     try {
-        await axios.delete(`http://onlinestore.test/api/notifications/${id}`, {
+        await axios.delete(`https://mylaravelecommerce-x59pn02e.b4a.run/api/notifications/${id}`, {
             headers: { Authorization: `Bearer ${token}` },
         });
         setNotifications((prev) => prev.filter((n) => n.id !== id));
@@ -174,7 +174,7 @@ const deleteNotification = async (id) => {
   const handleLogout = () => {
     axios
       .post(
-        "http://onlinestore.test/api/logout",
+        "https://mylaravelecommerce-x59pn02e.b4a.run/api/logout",
         {},
         {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
@@ -197,7 +197,7 @@ const deleteNotification = async (id) => {
     setSearchTerm(query);
     if (query.length > 1) {
       axios
-        .get(`http://onlinestore.test/api/search?query=${query}`)
+        .get(`https://mylaravelecommerce-x59pn02e.b4a.run/api/search?query=${query}`)
         .then((response) => {
           setSearchResults(response.data);
         })
@@ -403,7 +403,7 @@ const deleteNotification = async (id) => {
                       setSearchResults([]);
                     }}>
                 <img
-                  src={`http://onlinestore.test/uploads/${item.product_img}`}
+                  src={`https://mylaravelecommerce-x59pn02e.b4a.run/uploads/${item.product_img}`}
                   alt={item.product_name}
                   style={{ width: "50px", height: "50px", objectFit: "cover", marginRight: "10px" }}
                 />
