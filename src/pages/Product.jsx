@@ -10,7 +10,7 @@ function Product() {
     const [quantity, setQuantity] = useState(1);
 
     useEffect(() => {
-        axios.get(`http://onlinestore.test/api/products/${productId}`)
+        axios.get(`https://mylaravelecommerce-x59pn02e.b4a.run/api/products/${productId}`)
             .then(response => {
                 setProduct(response.data);
             })
@@ -26,7 +26,7 @@ function Product() {
             }
 
             await axios.post(
-                "http://onlinestore.test/api/cart/add",
+                "https://mylaravelecommerce-x59pn02e.b4a.run/api/cart/add",
                 { product_id: productId, quantity },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -48,7 +48,7 @@ function Product() {
             <div className="row">
                 {/* Product Image */}
                 <div className="col-md-6 text-center">
-                    <img src={`http://onlinestore.test/uploads/${product.product_img}`} alt={product.product_name} className="img-fluid fixed-img object-fit-cover" style = {{width : "300px", height: "300px",borderRadius: "10px"}} />
+                    <img src={`https://mylaravelecommerce-x59pn02e.b4a.run/uploads/${product.product_img}`} alt={product.product_name} className="img-fluid fixed-img object-fit-cover" style = {{width : "300px", height: "300px",borderRadius: "10px"}} />
                 </div>
 
                 {/* Product Details */}
