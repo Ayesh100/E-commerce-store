@@ -20,7 +20,7 @@ const Orders = () => {
       }
 
       const response = await axios.get(
-        `http://onlinestore.test/api/orders?page=${currentPage}`,
+        `https://mylaravelecommerce-x59pn02e.b4a.run/api/orders?page=${currentPage}`,
         {
           headers: { Authorization: `Bearer ${token}`, Accept: "application/json" },
           withCredentials: true,
