@@ -9,7 +9,7 @@ function Arrivals() {
 
     useEffect(() => {
         // Fetch products from Laravel backend
-        axios.get("http://onlinestore.test/api/products") 
+        axios.get("https://mylaravelecommerce-x59pn02e.b4a.run/api/products") 
             .then(response => {
                 setProducts(response.data.products);
                 console.log(response.data.products); 
