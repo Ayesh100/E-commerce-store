@@ -21,7 +21,7 @@ const VerifyStatus = () => {
         }
 
         try {
-            const response = await fetch("http://onlinestore.test/api/resend-verification", {
+            const response = await fetch("https://mylaravelecommerce-x59pn02e.b4a.run/api/resend-verification", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
