@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";  // Import useLocation to access URL query params
 import axios from "axios";
 import { AuthContext } from "../AuthContext";
 
@@ -11,8 +11,22 @@ const Login = () => {
     const [error, setError] = useState(null);
     const [showResend, setShowResend] = useState(false);
     const [resendMessage, setResendMessage] = useState("");
+    const [verifiedMessage, setVerifiedMessage] = useState(""); // For verification success message
     const navigate = useNavigate();
     const { login } = useContext(AuthContext);
+
+    const location = useLocation(); // Get the location object to access the URL
+    const queryParams = new URLSearchParams(location.search); // Parse query params
+
+    useEffect(() => {
+        // Check if the URL has the "verified" query parameter
+        const verified = queryParams.get('verified');
+        const message = queryParams.get('message');
+        
+        if (verified && message) {
+            setVerifiedMessage(message); // Set the verification message to be displayed
+        }
+    }, [location]);
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -62,6 +76,10 @@ const Login = () => {
             <div className="col-md-6">
                 <form onSubmit={handleSubmit} className="p-4 border rounded shadow bg-white">
                     <h3 className="mb-4 text-center">Login</h3>
+                    
+                    {/* Display verification success message */}
+                    {verifiedMessage && <div className="alert alert-success">{verifiedMessage}</div>}
+
                     {error && <div className="alert alert-danger">{error}</div>}
                     
                     <div className="mb-3">
