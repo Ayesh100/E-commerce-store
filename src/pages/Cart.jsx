@@ -97,7 +97,7 @@ function Cart() {
                             {/* Product Image */}
                             <Link to={`/product/${item.product.id}`} className="text-decoration-none">
                             <img 
-                                src={`http://onlinestore.test/uploads/${item.product.product_img}`} 
+                                src={`http://mylaravelecommerce-x59pn02e.b4a.run/uploads/${item.product.product_img}`} 
                                 alt={item.product.product_name} 
                                 style={{ width: "80px", height: "80px", objectFit: "cover", borderRadius: "8px" }}
                             />
