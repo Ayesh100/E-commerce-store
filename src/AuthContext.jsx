@@ -17,7 +17,7 @@ const AuthProvider = ({ children }) => {
 
     const fetchUserData = async () => {
         try {
-            const response = await axios.get('http://mylaravelecommerce-x59pn02e.b4a.run/api/user', {
+            const response = await axios.get('https://mylaravelecommerce-x59pn02e.b4a.run/api/user', {
                 headers: { Authorization: `Bearer ${localStorage.getItem('token')}` }
             });
             setUser(response.data);
